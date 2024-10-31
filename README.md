@@ -106,7 +106,11 @@ node server.js
 ----
 
 ⭐ 552476 – Otavio Lira Neves
+
 ⭐ 98846 – Victor Candile Monteiro Barbosa
+
 ⭐ 550149 – Matheus Oliveira de Andrade
+
 ⭐ 98852 – Gustavo Candile Monteiro Barbosa
+
 ⭐ 99079 – Vitor Blankenburg Soares Tavares
