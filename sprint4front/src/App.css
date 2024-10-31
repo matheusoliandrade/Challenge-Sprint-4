@@ -1,0 +1,221 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Layout principal */
+.container {
+    display: flex;
+    height: 100vh;
+    transition: margin-left 0.3s; /* Animação suave para a largura */
+}
+
+/* Estilos para a barra lateral */
+.sidebar {
+    width: 250px; /* Largura normal da barra lateral */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #ddd;
+    position: fixed; /* Fixa a barra lateral */
+    top: 0; /* Topo da tela */
+    bottom: 0; /* Fundo da tela */
+    transition: width 0.3s; /* Animação suave para largura */
+}
+
+.sidebar.collapsed {
+    width: 60px; /* Largura quando colapsada */
+}
+
+/* Diminui a imagem quando a barra lateral está colapsada */
+.sidebar.collapsed .logo img {
+    transform: scale(0.5); /* Reduz a escala da imagem para 50% */
+    transition: transform 0.3s, max-width 0.3s, height 0.3s; /* Transição suave */
+    max-width: 60px; /* Largura máxima quando colapsada */
+    height: auto; /* Altura automática para manter a proporção */
+}
+
+/* Certifique-se de que o espaço reservado para a imagem seja mantido */
+.sidebar.collapsed .logo {
+    width: 60px; /* Largura da área logo quando colapsada */
+    overflow: hidden; /* Impede que a imagem transborde */
+}
+
+.logo img {
+    width: 150px; /* Largura normal do logo */
+    transition: transform 0.3s, max-width 0.3s, height 0.3s; /* Transição suave */
+}
+/* Sidebar expandida (padrão) */
+.sidebar {
+    width: 250px;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar .logo img {
+    width: 150px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Sidebar colapsada automaticamente em telas menores */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 60px; /* Reduz a largura */
+    }
+  
+    .sidebar .logo img {
+      display: none; /* Diminui a imagem */
+    }
+  
+    .sidebar .menu p {
+      display: none; /* Esconde o texto "Descobrir" */
+    }
+  
+    .sidebar .menu li span {
+      display: none; /* Esconde o texto dos itens do menu */
+    }
+  }
+  
+
+/* Ocultar texto quando colapsada */
+.sidebar.collapsed .menu li span {
+    display: none; /* Oculta o texto dos links quando colapsada */
+}
+
+/* Estilos para a logo */
+.logo img {
+    width: 150px; /* Largura do logo */
+}
+
+/* Organizando o menu */
+.menu {
+    margin-top: 30px;
+}
+
+.menu p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #3F5B31; /* Verde escuro */
+    display: block;
+    text-align: left; /* Alinha o "Descobrir" à esquerda */
+}
+
+.menu ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0; /* Remove espaço entre o <p> e o <ul> */
+}
+
+.menu li {
+    margin-bottom: 20px;
+    display: flex; /* Para alinhar os itens do menu */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.menu li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #3F5B31; /* Verde escuro */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s; /* Animação suave para cor */
+    width: 100%; /* Faz o link ocupar toda a largura do li */
+    padding: 10px 15px; /* Adiciona preenchimento ao link */
+    border-radius: 5px; /* Arredonda os cantos do link */
+}
+
+.menu li a:hover {
+    background-color: #FF6F20; /* Cor ao passar o mouse (laranja) */
+    color: white; /* Muda a cor do texto ao passar o mouse */
+}
+
+/* Estilos para o conteúdo principal */
+.main-content {
+    flex-grow: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha para o topo */
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    margin-left: 250px; /* Espaço para a sidebar */
+    transition: margin-left 0.3s; /* Animação suave para margem */
+}
+
+/* Estilos para o botão de alternância da barra lateral */
+.toggle-btn {
+    margin-bottom: 20px; /* Margem inferior para separar do conteúdo */
+    padding: 10px 15px; /* Adicionando preenchimento para o botão */
+    cursor: pointer; /* Cursor pointer para indicar que é clicável */
+    position: absolute; /* Posiciona o botão */
+    top: 20px; /* Um pouco abaixo do topo */
+    left: 20px; /* Um pouco à direita da sidebar */
+    z-index: 10; /* Acima de outros elementos */
+    background-color: #FF6F20; /* Fundo do botão em laranja */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background-color 0.3s; /* Animação suave para a cor de fundo */
+}
+
+.toggle-btn:hover {
+    background-color: #E65C1A; /* Laranja mais escuro ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px; /* Largura da sidebar em telas pequenas */
+    }
+
+    .main-content {
+        margin-left: 60px; /* Ajuste a margem para a área de conteúdo */
+    }
+
+    .menu li a {
+        justify-content: center; /* Centraliza conteúdo no modo colapsado */
+    }
+
+    .menu li a span {
+        display: none; /* Oculta o texto no modo colapsado */
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s forwards;
+}
+
+.slide-out-left {
+    animation: slideOutLeft 0.5s forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}

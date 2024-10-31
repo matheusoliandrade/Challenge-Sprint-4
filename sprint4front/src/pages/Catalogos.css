@@ -1,0 +1,50 @@
+.catalog-container {
+    padding: 20px;
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cria colunas responsivas */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.catalog-item {
+    background: #ffffff; /* Fundo branco para os itens */
+    border: 1px solid #ddd; /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 15px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    transition: box-shadow 0.3s; /* Animação para sombra */
+}
+
+.catalog-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+}
+
+.item-image {
+    width: auto; /* Mantém a largura automática */
+    height: 200px; /* Defina uma altura fixa */
+    max-width: 100%; /* Permite que a imagem cresça até a largura máxima do contêiner */
+    object-fit: cover; /* Faz com que a imagem preencha o contêiner sem distorcer */
+    border-radius: 5px; /* Mantém os cantos arredondados */
+}
+
+.item-icon {
+    font-size: 2rem; /* Aumenta o ícone */
+    margin: 10px 0; /* Espaçamento acima e abaixo do ícone */
+}
+
+/* Estilos adicionais para cabeçalho e texto */
+h1 {
+    color: #3F5B31; /* Verde escuro para o cabeçalho */
+}
+
+.catalog-item h2 {
+    color: #3F5B31; /* Verde escuro para o nome do serviço */
+}
+
+.catalog-item p {
+    color: #555; /* Cor padrão para texto */
+}

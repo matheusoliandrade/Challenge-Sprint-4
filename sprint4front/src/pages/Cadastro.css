@@ -1,0 +1,63 @@
+.cadastro-container {
+    width: 300px; /* Largura máxima do contêiner */
+    margin: 50px auto; /* Centraliza a página com margens */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fundo da página */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    text-align: center; /* Centraliza o título */
+    color: #3F5B31; /* Verde escuro */
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column; /* Alinha os campos em coluna */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+label {
+    margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
+    display: block; /* Faz o rótulo ocupar a linha inteira */
+}
+
+input {
+    width: 100%; /* Largura total do campo de entrada */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda padrão */
+    border-radius: 4px; /* Cantos arredondados */
+}
+
+.submit-btn {
+    background-color: #3F5B31; /* Verde escuro */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 10px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: background-color 0.3s; /* Animação suave para a cor de fundo */
+}
+
+.submit-btn:hover {
+    background-color: #FF6F20; /* Cor ao passar o mouse (laranja) */
+}
+
+.error-message {
+    color: red; /* Cor do texto de erro */
+    text-align: center; /* Centraliza a mensagem de erro */
+    margin-bottom: 15px;
+    max-width: 300px; /* Espaçamento abaixo da mensagem de erro */
+}
+
+.success-message {
+    color: green; /* Cor do texto de sucesso */
+    text-align: center; /* Centraliza a mensagem de sucesso */
+    margin-bottom: 15px;
+    max-width: 300px; /* Espaçamento abaixo da mensagem de sucesso */
+}
+
